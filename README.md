@@ -1,13 +1,26 @@
 # vuepress-plugin-editors
 
-> page editors plugin for vuepress
+> All authors of a vuepress page
 
-## Development
+adds all authors of a file to the $page object
+
+## Installation
 
 ```bash
-yarn dev
-yarn build
+yarn add -D vuepress-plugin-authors
+// or npm install vuepress-plugin-authors -D
+
 ```
 
-For more details, please head VuePress's [documentation](https://v1.vuepress.vuejs.org/).
+## Usage
 
+```js
+// .vuepress/config.js
+
+module.exports = {
+    plugins: [
+      ['authors'],
+      // other plugins
+    ]
+}
+```
