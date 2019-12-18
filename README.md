@@ -1,4 +1,4 @@
-# vuepress-plugin-editors
+# vuepress-plugin-authors
 
 > All authors of a vuepress page
 

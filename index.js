@@ -14,7 +14,7 @@ function getGitAuthors (filePath) {
   try {
     authors = spawn.sync(
       'git',
-      ['log', '--format=%aN %aE', path.basename(filePath)],
+      ['log', '--format=%aN--%aE', path.basename(filePath)],
       { cwd: path.dirname(filePath) }
     ).stdout.toString('utf-8')
     authors = authors.split('\n')
@@ -22,7 +22,7 @@ function getGitAuthors (filePath) {
     authors = authors
       .filter(author => !!author)
       .map(author => {
-        return { username: author.split(' ')[0], email: author.split(' ')[1] }
+        return { username: author.split('--')[0], email: author.split('--')[1] }
       })
   } catch (e) { /* do not handle for now */ }
   return authors
